@@ -27,6 +27,7 @@
 .nav-bar-container > * {
     margin: 0;
     padding: 0;
+    padding-top: 0;
 }
 
 .hamburger-menu-search-bar {
