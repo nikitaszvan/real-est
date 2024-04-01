@@ -1,0 +1,21 @@
+.dashboard-container {
+    margin: 20px 0;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 1438px) {
+    .dashboard-container {
+    }
+}
+
+.dashboard-component {
+    background-color: #FFFFFF;
+    height: 180px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    min-width: 378px;
+}

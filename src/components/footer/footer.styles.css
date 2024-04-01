@@ -1,0 +1,6 @@
+.footer-section {
+    display: flex;
+    justify-content: center;
+    margin: 15px 0;
+    font-size: 12px;
+}
