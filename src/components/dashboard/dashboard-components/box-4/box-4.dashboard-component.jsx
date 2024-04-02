@@ -16,11 +16,9 @@ import {
 } from '@chakra-ui/react';
 
 const Box4 = () => {
-  const [ year, changeYear ] = useState('2024');
 
   return (
     <div className="box-4 dashboard-component">
-      <div>
         <div>
           <div>
             <h2>User Statistics</h2>
@@ -45,27 +43,6 @@ const Box4 = () => {
         </div>
         <div>CHART HERE</div>
       </div>
-      <div>
-        <Menu>
-          <MenuButton as={ Button } className='year-menu-dropdown'>
-            {year}
-            <i><FontAwesomeIcon icon={faChevronDown} /></i>
-          </MenuButton>
-          <MenuList className='year-menu-options'>
-              <MenuItem onClick={() => changeYear('2024')}>2024</MenuItem>
-              <MenuItem onClick={() => changeYear('2023')}>2023</MenuItem>
-              <MenuItem onClick={() => changeYear('2022')}>2022</MenuItem>
-              <MenuItem onClick={() => changeYear('2021')}>2021</MenuItem>
-          </MenuList>
-        </Menu>
-        <div>
-          <h2>25,852</h2>
-          <p>This month's users</p>
-        </div>
-        <FontAwesomeIcon icon={ faLaravel } style={{ color: '#31B97C', fontSize: '90px' }}/>
-        <button>Increase Users</button>
-      </div>
-    </div>
   )
 }
 

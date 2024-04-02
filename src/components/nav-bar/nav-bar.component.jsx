@@ -58,6 +58,7 @@ const NavBar = () => {
                 <MenuItem>Profile</MenuItem>
             </MenuList>
         </Menu>
+        <FontAwesomeIcon icon={faMagnifyingGlass} className='magnifying-icon'/>
         <div className='search-input'>
             <FontAwesomeIcon icon={ faMagnifyingGlass } />
             <input type="text" placeholder='Enter your keyword' onP/>

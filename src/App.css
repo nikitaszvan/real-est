@@ -7,7 +7,7 @@ html {
 #root > * {
     width: 85%;
     max-width: 1467px;
-    min-width: 650px;
+    min-width: 450px;
 }
 
 #root {

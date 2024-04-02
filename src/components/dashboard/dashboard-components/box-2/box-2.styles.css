@@ -69,9 +69,11 @@
 .number-unit-container > h1 {
     font-weight: 600;
     font-size: 20px;
+    width: 72px;
 }
 
 .number-unit-container > p {
     color: #787777;
     font-weight: 600;
+    width: 72px;
 }

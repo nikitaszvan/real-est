@@ -51,32 +51,45 @@
     flex: 2 1 auto;
 }
 
-@media screen and (min-width: 1090px) and (max-width: 1407px) {
+.box-3 > div:nth-child(3) {
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
 
+@media screen and (min-width: 1090px) and (max-width: 1407px) {
+    
     .box-3 {
         height: 180px;
-        padding-bottom: 0;
+        /* padding-bottom: 25px; */
+        padding-bottom: 10px;
     }
+
 
     .box-3 > div:first-of-type, .box-3 > div:nth-child(2) {
         flex: 1 0 15%;
         height: 100%;
     }
     .box-3 > div:nth-child(3) {
-        flex: 1 0 30%;
+        /* flex: 1 0 30%; */
         height: 100%;
+        margin-bottom: 0;
     }
 
     .pi-chart-container {
         flex: 1 1 50%;
     }
+
+    @media screen and (min-width: 1090px) and (max-width: 1130px) {
+        .box-3 {
+            height: 360px;
+        }
+
+        .box-3 > div:first-of-type, .box-3 > div:nth-child(2), .box-3 > div:nth-child(3) {
+            height: 50%;
+        } 
+    }
 }
 
-
-.box-3 > div:nth-child(3) {
-    box-sizing: border-box;
-    margin-bottom: 20px;
-}
 
 .box-3 > div:nth-child(3) > * {
     margin: 0;
@@ -134,6 +147,17 @@
     }
 }
 
+@media screen and (max-width: 752px) {
+    .pi-chart-2 {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1089px) and (max-width: 1130px) {
+    .pi-chart-1, .pi-chart-2, .pi-chart-3 {
+        display: inline-flex;
+    } 
+}
 
 
 .recharts-cartesian-grid-horizontal {

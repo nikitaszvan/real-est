@@ -1,154 +1,83 @@
 .box-4 {
-    display: flex;
-    flex: 2;
-    min-width: 66%;
-    height: 360px;
+    height: auto;
 }
 
-.box-4 > div:first-of-type > div {
+.box-4 > div {
     display: flex;
     justify-content: space-between;
 }
 
-.box-4 > div:first-of-type {
-    padding: 25px 0 25px 25px;
-    flex: 2;
-    border-right: 1px solid #31B97C;
+
+@media screen and (min-width: 1130px) {
+    .box-4 {
+        flex: 1 1 30%;
+    }
 }
 
-.box-4 > div > div > div:first-of-type > * {
+@media screen and (max-width: 1129px) {
+    .box-4 {
+        width: 100%;
+    }
+}
+
+.box-4 {
+    padding: 25px;
+    min-height: 360px;
+    box-sizing: border-box;
+}
+
+.box-4 > div > div:first-of-type > * {
     margin: 0;
 }
 
-.box-4 > div:first-of-type > div > div > h2 {
+.box-4 > div:first-of-type > div > h2 {
     font-weight: 600;
 }
 
-.box-4 > div > div > div:nth-child(2) {
+.box-4 > div > div:nth-child(2) {
     display: flex;
     gap: 60px;
     margin-right: 80px;
     margin-top: 10px;
 }
 
-.box-4 > div > div > div:nth-child(2)  {
+.box-4 > div > div:nth-child(2)  {
     display: flex;
     gap: 60px;
     padding-right: 100px;
 }
 
-.box-4 > div > div > div:nth-child(2) > div > svg  {
+.box-4 > div > div:nth-child(2) > div > svg  {
     position: relative;
     top: 2px;
     right: 6px;
 }
 
-.box-4 > div > div > div:nth-child(2) > div:first-of-type, .box-4 > div > div > div:nth-child(2) > div:nth-child(2) {
+.box-4 > div > div:nth-child(2) > div:first-of-type, .box-4 > div > div:nth-child(2) > div:nth-child(2) {
     display: flex;
 }
 
-.box-4 > div > div > div:nth-child(2) > div > div > * {
+.box-4 > div > div:nth-child(2) > div > * {
     margin: 0;
 }
 
-.box-4 > div > div > div:nth-child(2) > div > div > h2{
+.box-4 > div > div:nth-child(2) > div > div > h2{
     font-weight: 600;
 }
 
-.box-4 > div > div > div:first-of-type > p {
+.box-4 > div > div:first-of-type > p {
     margin-top: 5px;
     color: #7D7D7D;
     font-weight: 600;
     font-size: 14px;
 }
 
-.box-4 > div > div > div:nth-child(2) {
+.box-4 > div > div:nth-child(2) {
     position: relative;
     left: 100px;
 }
 
-.box-4 > div > div > div:nth-child(3) {
+.box-4 > div > div:nth-child(3) {
     position: relative;
     right: 50px;
-}
-
-.box-4 > div:nth-child(2) {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 25px 25px 25px 0;
-}
-
-.box-4 > div:nth-child(2) > div > p {
-    color: #7D7D7D;
-    font-weight: 600;
-    font-size: 14px;
-}
-
-.box-4 > div:nth-child(2) > div, 
-.box-4 > div:nth-child(2) > button:nth-child(5), 
-.box-4 > div:nth-child(2) > svg {
-    position: relative;
-    left: 10px;
-    bottom: 10px;
-}
-
-.box-4 > div:nth-child(2) > div > * {
-    margin: 0;
-    text-align: center;
-}
-
-.box-4 > div:nth-child(2) > button:first-of-type {
-   align-self: end;
-   width: 70px;
-   padding: 5px;
-   font-size: 14px;
-   font-weight: 600;
-   background-color: transparent;
-   color: #31B97C;
-   border: 2px solid #31B97C;
-   border-radius: 5px;
-   box-sizing: border-box;
-}
-
-.box-4 > div:nth-child(2) > button > span > i > svg {
-    font-size: 12px;
-    margin-left: 4px;
-    color: #90d1ad;
-}
-
-.year-menu-options {
-    width: 69px;
-    position: relative;
-    bottom: 11px;
-}
-
-.year-menu-options > button:first-of-type {
-    padding-top: 5px;
-    border-top: none;
-}
-
-.year-menu-options > button {
-    text-align: center;
-    height: 25px;
-    position: relative;
-    left: 0.5px;
-    display: flex;
-    justify-content: center;
-    font-size: 14px;
-    color: #31B97C;
-    background-color: transparent;
-    border: 1px solid #31B97C;
-}
-
-.box-4 > div:nth-child(2) > button:nth-child(5) {
-    background-color: #31B97C;
-    border: none;
-    color: white;
-    font-size: 14px;
-    font-family: 'Poppins';
-    padding: 6px 24px;
-    border-radius: 6px;
 }

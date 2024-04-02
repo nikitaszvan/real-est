@@ -1,65 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './box-5.styles.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBuilding, faCity, faGraduationCap, faHouseFire, faTreeCity } from '@fortawesome/free-solid-svg-icons';
+import { faCircle, faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { faLaravel } from '@fortawesome/free-brands-svg-icons';
+import {
+  Menu,
+  MenuButton,
+  Button,
+  MenuList,
+  MenuItem,
+  MenuItemOption,
+  MenuGroup,
+  MenuOptionGroup,
+  MenuDivider,
+} from '@chakra-ui/react';
 
 const Box5 = () => {
-
-  const recentEvents = [
-    {
-      icon: <FontAwesomeIcon icon={ faGraduationCap }/>,
-      iconColour: '#20b572',
-      iconBackgroundColour: '#e5f7ed',
-      eventName: 'Donation to local university',
-      eventDate: 'Sat, March 25, 2024',
-      valueDifference: '+$1.5K'
-    },
-    {
-      icon: <FontAwesomeIcon icon={ faHouseFire }/>,
-      iconColour:'#c7564f',
-      iconBackgroundColour: '#fde7e7',
-      eventName: 'Recent fire at church',
-      eventDate: 'Sat, March 25, 2024',
-      valueDifference: '-$50K'
-    }
-  ]
+  const [ year, changeYear ] = useState('2024');
 
   return (
     <div className="box-5 dashboard-component">
-      <div>
-        <h2>THU<br/>24</h2>
+        <Menu>
+          <MenuButton as={ Button } className='year-menu-dropdown'>
+            {year}
+            <i><FontAwesomeIcon icon={faChevronDown} /></i>
+          </MenuButton>
+          <MenuList className='year-menu-options'>
+              <MenuItem onClick={() => changeYear('2024')}>2024</MenuItem>
+              <MenuItem onClick={() => changeYear('2023')}>2023</MenuItem>
+              <MenuItem onClick={() => changeYear('2022')}>2022</MenuItem>
+              <MenuItem onClick={() => changeYear('2021')}>2021</MenuItem>
+          </MenuList>
+        </Menu>
         <div>
-          <h3>Community Value</h3>
-          <p>Toronto, Ontario</p>
+          <h2>25,852</h2>
+          <p>This month's users</p>
         </div>
+        <FontAwesomeIcon icon={ faLaravel } style={{ color: '#31B97C', fontSize: '90px' }}/>
+        <button>Increase Users</button>
       </div>
-      <div>
-        {recentEvents.map((recentEvent, index) => {
-          const {icon,
-            iconColour,
-            iconBackgroundColour,
-            eventName,
-            eventDate,
-            valueDifference} = recentEvent;
-          return (
-            <div key={index} className='event-card'>
-              <div style={{ backgroundColor: iconBackgroundColour, color: iconColour }}>{icon}</div>
-              <div>
-                <p>{eventName}</p>
-                <p>{eventDate}</p>
-              </div>
-              <h2>{valueDifference}</h2>
-            </div>
-          )
-        })}
-      </div>
-      <div>
-        <FontAwesomeIcon icon={ faBuilding } />
-        <FontAwesomeIcon icon={ faCity }/>
-        <FontAwesomeIcon icon={ faTreeCity }/>
-
-      </div>
-    </div>
   )
 }
 

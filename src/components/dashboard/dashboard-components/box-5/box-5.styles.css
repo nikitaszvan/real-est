@@ -1,99 +1,100 @@
+
+
+
 .box-5 {
-    flex: 1 0 30%;
-    height: 360px;
-    padding: 25px;
-    box-sizing: border-box;
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
+    padding: 25px 25px 25px 0;
+    height: auto;
+    width: auto;
 }
 
-.box-5 > div:first-of-type {
-    display: flex;
+
+@media screen and (min-width: 1130px) and (max-width: 1440px) {
+    .box-5 {
+        flex: 1 1 30%;
+    }
 }
 
-.box-5 > div > h2, .box-5 > div > div > h3, .box-5 > div > div > p {
-	margin: 0;
+@media screen and (min-width: 1441px) {
+    .box-5 {
+        flex: 2 1 60%;
+    }
 }
 
-.box-5 > div > h2 {
-    font-weight: 600;
-    margin-right: 26px;
-}
 
-.box-5 > div:first-of-type > div {
-    border-left: 1px solid #31B97C;
-    padding-left: 5px;
-    height: 40px;
-}
 
-.box-5 > div:nth-child(2) {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.box-5 > div:first-of-type > div > h3 {
-    font-size: 18px;
-    font-weight: 600;
-}
-
-.box-5 > div:first-of-type > div > p {
+.box-5 > div:nth-child(2) > div > p {
     color: #7D7D7D;
-    font-size: 12px;
-    font-weight: 500;
-}
-
-.event-card {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.event-card > div > svg {
-    font-size: 25px;
-}
-
-.event-card > div:first-of-type {
-    width: 55px;
-    height: 55px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    box-sizing: border-box;
-}
-
-.event-card > div:nth-child(2) {
-    width: 195px;
-}
-
-.event-card > h2 {
-    width: 60px;
-}
-
-.event-card > div:nth-child(2) > p, .event-card > h2 {
-    margin: 0;
-}
-
-.event-card > div:nth-child(2) > p:first-of-type {
+    font-weight: 600;
     font-size: 14px;
-    font-weight: 600;
 }
 
-.event-card > div:nth-child(2) > p:nth-child(2) {
-    margin-top: 5px;
-    color: #7D7D7D;
-    font-weight: 600;
+.box-5 > div:nth-child(2) > div, 
+.box-5 > div:nth-child(2) > button:nth-child(5), 
+.box-5 > div:nth-child(2) > svg {
+    position: relative;
+    left: 10px;
+    bottom: 10px;
 }
 
-.box-5 > div:nth-child(3) {
+.box-5 > div:nth-child(2) > div > * {
+    margin: 0;
+    text-align: center;
+}
+
+.box-5 > div:nth-child(2) > button:first-of-type {
+   align-self: end;
+   width: 70px;
+   padding: 5px;
+   font-size: 14px;
+   font-weight: 600;
+   background-color: transparent;
+   color: #31B97C;
+   border: 2px solid #31B97C;
+   border-radius: 5px;
+   box-sizing: border-box;
+}
+
+.box-5 > div:nth-child(2) > button > span > i > svg {
+    font-size: 12px;
+    margin-left: 4px;
+    color: #90d1ad;
+}
+
+.year-menu-options {
+    width: 69px;
+    position: relative;
+    bottom: 11px;
+}
+
+.year-menu-options > button:first-of-type {
+    padding-top: 5px;
+    border-top: none;
+}
+
+.year-menu-options > button {
+    text-align: center;
+    height: 25px;
+    position: relative;
+    left: 0.5px;
     display: flex;
-    gap: 5px;
-}
-
-.box-5 > div:nth-child(3) > * {
-    font-size: 35px;
+    justify-content: center;
+    font-size: 14px;
     color: #31B97C;
+    background-color: transparent;
+    border: 1px solid #31B97C;
 }
 
+.box-5 > div:nth-child(2) > button:nth-child(5) {
+    background-color: #31B97C;
+    border: none;
+    color: white;
+    font-size: 14px;
+    font-family: 'Poppins';
+    padding: 6px 24px;
+    border-radius: 6px;
+}
