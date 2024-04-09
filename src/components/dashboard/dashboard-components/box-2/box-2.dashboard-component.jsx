@@ -47,7 +47,7 @@ const Box2 = () => {
   ]
 
   return (
-    <div className="box-2 dashboard-component">
+    <div className="box-2 dashboard-component col-lg-7 col-xxl-8">
       <div>
         <h2>Statistics</h2>
         <p>Updated 1 month ago</p>

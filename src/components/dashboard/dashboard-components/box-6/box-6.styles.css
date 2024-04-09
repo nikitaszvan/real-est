@@ -1,7 +1,6 @@
 .box-6 {
-    flex: 1 0 30%;
-    height: 360px;
-    padding: 25px;
+    height: auto;
+    padding: 25px !important;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -46,7 +45,8 @@
 
 .event-card {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 22%;
     align-items: center;
 }
 

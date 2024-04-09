@@ -1,11 +1,9 @@
 .box-1 {
-    flex: 1 0 auto;
     display: flex;
-    padding: 25px;
+    padding: 25px !important;
     box-sizing: border-box;
     justify-content: space-between;
-    /* width: 390px; */
-    min-width: 378px;
+    height: 200px;
 }
 
 .box-1 > div:first-of-type {
@@ -14,6 +12,7 @@
 
 .box-1 > div:first-of-type > h2  {
     font-weight: 600;
+    font-size: 1.5em;
 }
 
 .box-1 > div:first-of-type > p  {
@@ -39,6 +38,7 @@
     font-family: 'Poppins';
     font-size: 14px;
     margin-top: 5px;
+    margin-bottom: 10px;
 }
 
 .box-1 > div > div > p {
@@ -57,5 +57,11 @@
     display: flex;
     align-items: center;
     gap: 8px;
+}
+
+@media screen and (max-width: 530px) {
+    .box-1 > svg:nth-child(2) {
+        display: none;
+    }
 }
 

@@ -1,22 +1,19 @@
 .box-3 {
-    flex: 1 0 20%;
-    height: 360px;
+    height: 420px;
     border-radius: 0%;
     background-color: transparent;
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    padding-bottom: 20px;
+    gap: 1em;
+    padding: 0 0 1em 0 !important;
     box-sizing: border-box;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
-    max-width: 100%;
 }
 
 .box-3 > div:first-of-type, .box-3 > div:nth-child(2) {
     background-color: #FFFFFF;
-    border-radius: 10px;
     flex: 1 0 40%;
 }
 

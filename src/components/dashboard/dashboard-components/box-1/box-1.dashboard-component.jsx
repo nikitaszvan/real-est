@@ -5,7 +5,7 @@ import { faHouseTsunami } from '@fortawesome/free-solid-svg-icons';
 
 const Box1 = () => {
   return (
-    <div className="box-1 dashboard-component">
+    <div className="box-1 dashboard-component col-lg-5 col-xxl-3">
       <div>
         <h2>Congratulations Kyle</h2>
         <p>You are getting viewed</p>

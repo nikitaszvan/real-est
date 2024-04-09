@@ -19,7 +19,7 @@ const Box5 = () => {
   const [ year, changeYear ] = useState('2024');
 
   return (
-    <div className="box-5 dashboard-component">
+    <div className="box-5 dashboard-component col-xxl-2">
         <Menu>
           <MenuButton as={ Button } className='year-menu-dropdown'>
             {year}

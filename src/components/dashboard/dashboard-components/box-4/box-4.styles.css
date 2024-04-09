@@ -1,29 +1,12 @@
 .box-4 {
     height: auto;
+    padding: 25px !important;
+    box-sizing: border-box;
 }
 
 .box-4 > div {
     display: flex;
     justify-content: space-between;
-}
-
-
-@media screen and (min-width: 1130px) {
-    .box-4 {
-        flex: 1 1 30%;
-    }
-}
-
-@media screen and (max-width: 1129px) {
-    .box-4 {
-        width: 100%;
-    }
-}
-
-.box-4 {
-    padding: 25px;
-    min-height: 360px;
-    box-sizing: border-box;
 }
 
 .box-4 > div > div:first-of-type > * {

@@ -45,7 +45,7 @@ const NavBar = () => {
     // const ChevronDownIcon = () => <FontAwesomeIcon icon={faChevronDown} />;
 
   return (
-    <div className="nav-bar-container">
+    <div className="nav-bar-container col-xxl-11 mb-3">
         <div className="hamburger-menu-search-bar">
         <Menu>
             <MenuButton as={ Button } className='hamburger-menu'>

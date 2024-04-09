@@ -91,7 +91,7 @@ const Box3 = () => {
 
 
   return (
-    <div className="box-3 dashboard-component">
+    <div className="box-3 dashboard-component col-xxl-5">
       <div>
         <p className='p-gray'>Transactions</p>
         <h2 className='stat-number'>230K</h2>

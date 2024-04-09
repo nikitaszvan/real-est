@@ -11,7 +11,7 @@ import Box8 from './dashboard-components/box-8/box-8.dashboard-component';
 
 const Dashboard = () => {
   return (
-    <div className='dashboard-container'>
+    <div className='dashboard-container row'>
         <Box1 />
         <Box2 />
         <Box3 />
