@@ -7,6 +7,12 @@
     height: 200px;
 }
 
+@media screen and (max-width: 1426px) {
+    .box-2 {
+        height: 243px
+    }
+}
+
 .box-2 > div:first-of-type {
     display: flex;
     justify-content: space-between;
@@ -74,4 +80,16 @@
     color: #787777;
     font-weight: 600;
     width: 72px;
+}
+
+@media screen and (max-width: 576px) {
+    .box-2 {
+        width: 91.66666667% !important;
+    }
+}
+
+@media screen and (max-width: 574px) {
+    .box-2 {
+        height: 315px;
+    }
 }

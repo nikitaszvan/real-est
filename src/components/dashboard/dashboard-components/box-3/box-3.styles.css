@@ -10,6 +10,8 @@
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
+    position: relative;
+    z-index: 1;
 }
 
 .box-3 > div:first-of-type, .box-3 > div:nth-child(2) {
@@ -51,40 +53,6 @@
 .box-3 > div:nth-child(3) {
     box-sizing: border-box;
     margin-bottom: 20px;
-}
-
-@media screen and (min-width: 1090px) and (max-width: 1407px) {
-    
-    .box-3 {
-        height: 180px;
-        /* padding-bottom: 25px; */
-        padding-bottom: 10px;
-    }
-
-
-    .box-3 > div:first-of-type, .box-3 > div:nth-child(2) {
-        flex: 1 0 15%;
-        height: 100%;
-    }
-    .box-3 > div:nth-child(3) {
-        /* flex: 1 0 30%; */
-        height: 100%;
-        margin-bottom: 0;
-    }
-
-    .pi-chart-container {
-        flex: 1 1 50%;
-    }
-
-    @media screen and (min-width: 1090px) and (max-width: 1130px) {
-        .box-3 {
-            height: 360px;
-        }
-
-        .box-3 > div:first-of-type, .box-3 > div:nth-child(2), .box-3 > div:nth-child(3) {
-            height: 50%;
-        } 
-    }
 }
 
 
@@ -186,4 +154,21 @@
 .recharts-responsive-container {
     align-items: center;
     justify-content: center;
+}
+
+@media screen and (max-width: 576px) {
+    .box-3 {
+        width: 91.66666667% !important;
+    }
+}
+
+@media screen and (max-width: 992px) {
+
+    .box-3 {
+        height: 630px;
+    }
+    .box-3 > div:first-of-type, .box-3 > div:nth-child(2), .box-3 > div:nth-child(3) {
+        width: 100%;
+        flex: none;
+    }
 }

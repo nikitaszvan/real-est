@@ -12,7 +12,6 @@
 
 .box-1 > div:first-of-type > h2  {
     font-weight: 600;
-    font-size: 1.5em;
 }
 
 .box-1 > div:first-of-type > p  {
@@ -59,9 +58,30 @@
     gap: 8px;
 }
 
-@media screen and (max-width: 530px) {
-    .box-1 > svg:nth-child(2) {
+
+
+@media screen and (max-width: 1426px) {
+    .box-1 {
+        height: 243px
+    }
+
+    .box-1 > div > div {
+        margin-top: 65px;
+    }
+    
+    .box-1 > svg {
+        margin-top: 40px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .box-1 {
+        width: 91.66666667% !important;
+    }
+
+    .box-1 > svg {
         display: none;
     }
 }
+
 

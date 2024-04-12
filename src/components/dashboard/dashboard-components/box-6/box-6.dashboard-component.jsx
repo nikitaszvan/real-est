@@ -25,7 +25,7 @@ const Box6 = () => {
   ]
 
   return (
-    <div className="box-6 dashboard-component col-xxl-6">
+    <div className="box-6 dashboard-component col-xxl-6 col-lg-11 col-sm-11">
       <div>
         <h2>THU<br/>24</h2>
         <div>

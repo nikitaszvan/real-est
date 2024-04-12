@@ -97,3 +97,9 @@
     color: #31B97C;
 }
 
+@media screen and (max-width: 576px) {
+    .box-6 {
+        width: 91.66666667% !important;
+    }
+}
+

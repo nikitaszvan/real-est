@@ -18,7 +18,7 @@ import {
 const Box4 = () => {
 
   return (
-    <div className="box-4 dashboard-component col-xxl-6">
+    <div className="box-4 dashboard-component col-xxl-6 col-lg-11 col-sm-11">
         <div>
           <div>
             <h2>User Statistics</h2>
