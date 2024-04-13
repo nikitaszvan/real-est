@@ -4,12 +4,12 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 200px;
+    height: auto;
 }
 
 @media screen and (max-width: 1426px) {
     .box-2 {
-        height: 243px
+        height: auto;
     }
 }
 
@@ -90,6 +90,6 @@
 
 @media screen and (max-width: 574px) {
     .box-2 {
-        height: 315px;
+        height: auto;
     }
 }

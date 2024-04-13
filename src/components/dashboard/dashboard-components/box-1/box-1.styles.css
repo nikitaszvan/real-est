@@ -62,11 +62,11 @@
 
 @media screen and (max-width: 1426px) {
     .box-1 {
-        height: 243px
+        height: auto;
     }
 
     .box-1 > div > div {
-        margin-top: 65px;
+        margin-top: 55px;
     }
     
     .box-1 > svg {
@@ -81,6 +81,18 @@
 
     .box-1 > svg {
         display: none;
+    }
+}
+
+@media screen and (max-width: 1238px) and (min-width: 1200px) {
+    .box-1 > div > div {
+        margin-top: 15px;
+    }
+}
+
+@media screen and (max-width: 1540px) and (min-width:1400px) {
+    .box-1 {
+        height: auto;
     }
 }
 
