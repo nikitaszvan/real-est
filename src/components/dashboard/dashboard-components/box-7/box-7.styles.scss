@@ -1,0 +1,11 @@
+.box-7 {
+    height: auto;
+    box-sizing: border-box;
+    padding: 25px !important;
+}
+
+@media screen and (max-width: 576px) {
+    .box-7 {
+        width: 91.66666667% !important;
+    }
+}

@@ -1,95 +1,93 @@
 .box-2 {
-    padding: 25px !important;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: auto;
+  padding: 25px !important;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto;
 }
 
 @media screen and (max-width: 1426px) {
-    .box-2 {
-        height: auto;
-    }
+  .box-2 {
+    height: auto;
+  }
 }
-
 .box-2 > div:first-of-type {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
 }
 
 .box-2 > div:first-of-type > * {
-    margin: 0;
+  margin: 0;
 }
 
 .box-2 > div:first-of-type > h2 {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 .box-2 > div:first-of-type > p {
-    color: #7D7D7D;
-    font-weight: 600;
+  color: #7D7D7D;
+  font-weight: 600;
 }
 
 .box-2 > div:nth-child(2) {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .box-2 > div:nth-child(2) > * {
-    margin: 10px;
+  margin: 10px;
 }
 
 .box-2 > div:nth-child(2) > * {
-    align-items: center;
+  align-items: center;
 }
 
 .statistics-icon {
-    width: 55px;
-    height: 55px;
-    box-sizing: border-box;
-    font-size: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  box-sizing: border-box;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
 }
 
-.box-2 > div:nth-child(2) > div{
-    display: flex;
+.box-2 > div:nth-child(2) > div {
+  display: flex;
 }
 
 .number-unit-container {
-    margin-left: 8px;
+  margin-left: 8px;
 }
 
 .number-unit-container > * {
-    margin: 0;
+  margin: 0;
 }
 
 .number-unit-container > h1 {
-    font-weight: 600;
-    font-size: 20px;
-    width: 72px;
+  font-weight: 600;
+  font-size: 20px;
+  width: 72px;
 }
 
 .number-unit-container > p {
-    color: #787777;
-    font-weight: 600;
-    width: 72px;
+  color: #787777;
+  font-weight: 600;
+  width: 72px;
 }
 
 @media screen and (max-width: 576px) {
-    .box-2 {
-        width: 91.66666667% !important;
-    }
+  .box-2 {
+    width: 91.66666667% !important;
+  }
 }
-
 @media screen and (max-width: 574px) {
-    .box-2 {
-        height: auto;
-    }
+  .box-2 {
+    height: auto;
+  }
 }

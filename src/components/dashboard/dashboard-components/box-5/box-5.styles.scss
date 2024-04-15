@@ -1,0 +1,103 @@
+
+.box-5 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 25px !important;
+    height: 420px;
+}
+
+
+@media screen and (min-width: 1130px) and (max-width: 1440px) {
+    .box-5 {
+        flex: 1 1 30%;
+    }
+}
+
+@media screen and (min-width: 1441px) {
+    .box-5 {
+        flex: 2 1 60%;
+    }
+}
+
+
+
+.box-5 > div:nth-child(2) > div > p {
+    color: #7D7D7D;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.box-5 > div:nth-child(2) > div, 
+.box-5 > div:nth-child(2) > button:nth-child(5), 
+.box-5 > div:nth-child(2) > svg {
+    position: relative;
+    left: 10px;
+    bottom: 10px;
+}
+
+.box-5 > div:nth-child(2) > div > * {
+    margin: 0;
+    text-align: center;
+}
+
+.box-5 > div:nth-child(2) > button:first-of-type {
+   align-self: end;
+   width: 70px;
+   padding: 5px;
+   font-size: 14px;
+   font-weight: 600;
+   background-color: transparent;
+   color: #31B97C;
+   border: 2px solid #31B97C;
+   border-radius: 5px;
+   box-sizing: border-box;
+}
+
+.box-5 > div:nth-child(2) > button > span > i > svg {
+    font-size: 12px;
+    margin-left: 4px;
+    color: #90d1ad;
+}
+
+.year-menu-options {
+    width: 69px;
+    position: relative;
+    bottom: 11px;
+}
+
+.year-menu-options > button:first-of-type {
+    padding-top: 5px;
+    border-top: none;
+}
+
+.year-menu-options > button {
+    text-align: center;
+    height: 25px;
+    position: relative;
+    left: 0.5px;
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+    color: #31B97C;
+    background-color: transparent;
+    border: 1px solid #31B97C;
+}
+
+.box-5 > div:nth-child(2) > button:nth-child(5) {
+    background-color: #31B97C;
+    border: none;
+    color: white;
+    font-size: 14px;
+    font-family: 'Poppins';
+    padding: 6px 24px;
+    border-radius: 6px;
+}
+
+@media screen and (max-width: 576px) {
+    .box-5 {
+        width: 91.66666667% !important;
+    }
+}

@@ -1,0 +1,9 @@
+.box-8 {
+    height: 360px;
+}
+
+@media screen and (max-width: 576px) {
+    .box-8 {
+        width: 91.66666667% !important;
+    }
+}

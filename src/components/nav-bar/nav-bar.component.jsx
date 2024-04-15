@@ -1,5 +1,6 @@
 import React from 'react';
 import './nav-bar.styles.css'
+import MinimizedSearchField from './minimized-search-field/minimized-search-field.component';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faBell, faBars } from '@fortawesome/free-solid-svg-icons';
 import { faRocketchat } from '@fortawesome/free-brands-svg-icons';
@@ -15,6 +16,8 @@ import {
     MenuOptionGroup,
     MenuDivider,
   } from '@chakra-ui/react';
+
+  import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 const NavBar = () => {
 
@@ -43,7 +46,13 @@ const NavBar = () => {
      };
 
     // const ChevronDownIcon = () => <FontAwesomeIcon icon={faChevronDown} />;
+     console.log('render');
 
+     const handleSearchClick = () => {
+        return(
+            <input placeholder='Enter keyword'></input>
+        )
+     }
   return (
     <div className="nav-bar-container mb-3">
         <div className="hamburger-menu-search-bar">
@@ -52,13 +61,13 @@ const NavBar = () => {
                 <i>{<FontAwesomeIcon icon={faBars} />}</i>
             </MenuButton>
             <MenuList className='navbar-menu-options'>
-                <MenuItem>Dashboard</MenuItem>
-                <MenuItem>Statistics</MenuItem>
-                <MenuItem>Transactions</MenuItem>
-                <MenuItem>Profile</MenuItem>
+                <MenuItem><Link to="/">Dashboard</Link></MenuItem>
+                <MenuItem><Link to="/statistics">Statistics</Link></MenuItem>
+                <MenuItem><Link to="/transactions">Transactions</Link></MenuItem>
+                <MenuItem><Link to="/profile">Profile</Link></MenuItem>
             </MenuList>
         </Menu>
-        <FontAwesomeIcon icon={faMagnifyingGlass} className='magnifying-icon'/>
+        <MinimizedSearchField />
         <div className='search-input'>
             <FontAwesomeIcon icon={ faMagnifyingGlass } />
             <input type="text" placeholder='Enter your keyword' onP/>
