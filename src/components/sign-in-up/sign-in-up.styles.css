@@ -1,0 +1,9 @@
+.sign-in-page-container {
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  padding: 40px;
+  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  height: 600px;
+  width: 94%;
+}

@@ -11,6 +11,9 @@
 .box-1 > div:first-of-type > h2 {
   font-weight: 600;
 }
+.box-1 > div:first-of-type > h2 > span {
+  text-transform: capitalize;
+}
 .box-1 > div:first-of-type > p {
   color: #7D7D7D;
   font-weight: 600;

@@ -41,8 +41,8 @@ const NavBar = () => {
     ];
 
     const dummyUser = {
-        fullName: 'Kyle Dionisio',
-        role: 'Investor'
+        fullName: 'guest',
+        role: 'sign in'
      };
 
     // const ChevronDownIcon = () => <FontAwesomeIcon icon={faChevronDown} />;
@@ -83,7 +83,7 @@ const NavBar = () => {
             <FontAwesomeIcon icon={ faRocketchat } />
             <div className="user-role-container">
                 <h3 className="user-fullname">{dummyUser.fullName}</h3>
-                <p className="user-role">{dummyUser.role}</p>
+                <Link to='/sign-in'><p className="user-role">{dummyUser.role}</p></Link>
             </div>
             <img src={avatar} alt="profile avatar" className="profile-avatar" />
         </div>
