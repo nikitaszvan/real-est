@@ -3,7 +3,8 @@ import {
     getAuth,
     signInWithRedirect,
     signInWithPopup,
-    GoogleAuthProvider
+    GoogleAuthProvider,
+    signOut
 } from '@firebase/auth';
 
 import {
@@ -32,6 +33,7 @@ provider.setCustomParameters({
 
 export const auth = getAuth();
 export const signInWithGooglePopup = async () => signInWithPopup(auth, provider);
+
 export const db = getFirestore();
 
 export const createUserDocumentFromAuth = async (userAuth) => {
@@ -57,3 +59,5 @@ export const createUserDocumentFromAuth = async (userAuth) => {
         }
     }
 }
+
+export const signOutUser = () => signOut(auth);
