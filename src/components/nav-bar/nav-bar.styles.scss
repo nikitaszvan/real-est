@@ -143,13 +143,14 @@
 
 .user-role-container > * {
     margin: 0;
+    text-align: center;
 }
 
 
 .user-role-container > h3 {
     font-weight: 600;
     color: #333333;
-    font-size: 14px;
+    font-size: 18px;
     margin-top: 14px;
     text-transform: uppercase;
 }
@@ -165,7 +166,6 @@
 
 .user-role-container > a > p {
     color: #7D7D7D;
-    text-align: right;
     font-weight: 600;
 }
 
