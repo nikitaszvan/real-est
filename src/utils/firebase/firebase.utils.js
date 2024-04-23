@@ -6,7 +6,8 @@ import {
     GoogleAuthProvider,
     createUserWithEmailAndPassword,
     signOut,
-    signInWithEmailAndPassword
+    signInWithEmailAndPassword,
+    updateProfile,
 } from '@firebase/auth';
 
 import {
@@ -39,8 +40,7 @@ export const signInWithGooglePopup = async () => signInWithPopup(auth, provider)
 export const db = getFirestore();
 
 export const createUserDocumentFromAuth = async (
-    userAuth,
-    additionalInformation = {}
+    userAuth, additionalInformation
     ) => {
     if (!userAuth) return;
 
@@ -48,20 +48,22 @@ export const createUserDocumentFromAuth = async (
 
     const userSnapshot = await getDoc(userDocRef);
 
-    if(!userSnapshot.exists()) {
-        const { displayName, email } = userAuth;
+     if(!userSnapshot.exists()) {
+        const { email } = userAuth;
+        const { displayName } = additionalInformation;
+
         const createdAt = new Date();
 
         try {
             await setDoc(userDocRef, {
                 displayName,
                 email,
-                createdAt
+                createdAt,
             })
         } catch (error) {
             console.log('error creating the user', error.message);
         }
-    }
+     }
     return userDocRef;
 }
 
@@ -72,7 +74,15 @@ export const createAuthUserWithEmailAndPassword = async (email, password) => {
 }
 
 export const signInAuthUserWithEmailAndPassword = async (email, password) => {
-    return await createUserWithEmailAndPassword(auth, email, password);
+    if(!email || !password) return;
+
+    return await signInWithEmailAndPassword(auth, email, password);
+}
+
+export const updateAuthCurrentUser = async (displayName) => {
+    return await updateProfile(auth.currentUser, {
+        displayName: displayName
+      })
 }
 
 export const signOutUser = () => signOut(auth);

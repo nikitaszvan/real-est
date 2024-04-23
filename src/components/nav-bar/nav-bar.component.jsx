@@ -94,7 +94,7 @@ const NavBar = () => {
             </div>
             {currentUser ? 
             <Menu>
-            <MenuButton as={ Button } className='hamburger-menu'>
+            <MenuButton as={ Button } className='profile-hamburger-menu'>
                 <img src={ currentUser? avatar : guestAvatar } alt="profile avatar" className="profile-avatar" />
             </MenuButton>
             <MenuList className='user-options'>

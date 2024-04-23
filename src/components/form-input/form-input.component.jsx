@@ -1,14 +1,16 @@
 import React from 'react';
 import './form-input.styles.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleXmark } from '@fortawesome/free-solid-svg-icons';
 
-const FormInput = ({ label, ...otherProps }) => {
+const FormInput = ({ label, classInput, ...otherProps }) => {
 
     return (
-        <div className="group">
+        <div className={`${classInput} group`}>
             { label && (
-            <label className={`${otherProps.value.length? 'shrink' : ''} form-input-label`} htmlFor={ label }>{ label }</label>
+            <label className={`${otherProps.value.length? 'shrink ' : ''}form-input-label`} htmlFor={ label }>{ label }</label>
             )}
-            <input className='form-input' { ...otherProps } required/>
+            <input className={`${label!== 'First and Last Name'? 'noSpaceInput' : 'noDoubleSpace'} form-input`} { ...otherProps } required />
         </div>
     )
 }
