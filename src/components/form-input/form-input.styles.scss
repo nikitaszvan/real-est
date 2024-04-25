@@ -52,3 +52,11 @@ $main-color: black;
     }
   }
 }
+
+.full-name-input, .password-input {
+  margin-bottom: 0px;
+}
+
+.noDoubleSpace.form-input, .noSpaceInput.form-input {
+  margin-bottom: 5px;
+}

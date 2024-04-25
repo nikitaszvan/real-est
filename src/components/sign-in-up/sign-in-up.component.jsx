@@ -10,6 +10,8 @@ import {
 import { BrowserRouter as Router, Routes, Route, useNavigate, Navigate, Link, Redirect } from 'react-router-dom';
 import FormInput from '../form-input/form-input.component';
 import { UserContext } from '../../contexts/user.context';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleXmark, faSquareCheck } from '@fortawesome/free-solid-svg-icons';
 
 const defaultFormFields = {
     displayName: '',
@@ -21,11 +23,30 @@ const defaultFormFields = {
 const SignInUp = () => {
     const [ formFields, setFormFields ] = useState(defaultFormFields);
     const { displayName, email, password, confirmPassword } = formFields;
-
     const { setCurrentUser } = useContext(UserContext);
     const [signInButtonType, setSignInButtonType] = useState('submit');
     const [signUpButtonType, setSignUpButtonType] = useState('button');
     const [signUpMode, setSignUpMode ] = useState(false);
+    const [isPasswordInputSelected, setIsPasswordInputSelected] = useState(false);
+    const [isFullNameInputSelected, setIsFullNameInputSelected] = useState(false);
+
+    const handleInputFocus = (type) => {
+        if (type === 'fullName') {
+            setIsFullNameInputSelected(true);
+        }
+        else {
+            setIsPasswordInputSelected(true);
+        }
+    };
+
+    const handleInputBlur = (type) => {
+        if (type === 'fullName') {
+            setIsFullNameInputSelected(false);
+        }
+        else {
+            setIsPasswordInputSelected(false);
+        }
+    };
 
     const navigate = useNavigate();
     const clearFormFields = () => {
@@ -41,10 +62,6 @@ const SignInUp = () => {
         const pattern = /^\s*\w+(\s+\w+)+\s*$/;
         return pattern.test(input);
     }
-
-    // function formatString(input) {
-    //    return input.trim().split(/ +/).join(' ');
-    // }
 
     const handleSignUp = async () => {
         if (password !== confirmPassword) {
@@ -104,7 +121,12 @@ const SignInUp = () => {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
+        if (name =='displayName' && (value.length === 1 && value.trim() === '')) {
+            setFormFields({...formFields, [name]: ''});
+        }
+        else {
             setFormFields({...formFields, [name]: value});
+        }
     }
 
     const handleButtonClick = (event, type) => {
@@ -164,15 +186,20 @@ const SignInUp = () => {
             <div className='email-password-section'>
                 <h1>Sign {signUpMode ? <span>Up</span> : <span>In</span>} with your email and password</h1>
                 <form onClick={(event)=> {event.preventDefault()}}>
-                {signUpMode && (
-                    <FormInput
+                {(signUpMode) &&
+                    (<FormInput
                         label='First and Last Name'
                         classInput={'full-name-input'}
                         type='text'
                         onChange={ handleChange }
+                        onFocus={() => {handleInputFocus('fullName')}}
+                        onBlur={() => {handleInputBlur('fullName')}}
                         name='displayName'
                         value={ displayName }
                     />)}
+
+                    {((signUpMode) && (!hasAtLeastTwoWords(displayName) && (isFullNameInputSelected)) || (!hasAtLeastTwoWords(displayName) && displayName.length > 0)) &&
+                        <p style={{color: 'red'}}>Please include first and last name</p>}
                     <FormInput
                         label='Email'
                         classInput={'email-input'}
@@ -181,26 +208,35 @@ const SignInUp = () => {
                         name='email'
                         value={ email }
                     />
+                    
                     <FormInput
                         label='Password'
                         classInput={'password-input'}
                         type='password'
                         onChange={ handleChange }
+                        onFocus={() => {handleInputFocus('password')}}
+                        onBlur={() => {handleInputBlur('password')}}
                         name='password'
                         value={ password }
                     />
+                    {signUpMode && ((password.length < 6 && isPasswordInputSelected) || (password.length > 0 && password.length < 6)) &&
+                    <p style={{color: 'red'}}>Password must be at least 6 characters</p>}
                     {signUpMode && (
-                    <FormInput
-                        label='Confirm Password'
-                        classInput={'confirm-password-input'}
-                        type='password'
-                        onChange={ handleChange }
-                        name='confirmPassword'
-                        value={ confirmPassword }
-                    />
-                    )}
+                            <>
+                                <FormInput
+                                    label='Confirm Password'
+                                    classInput={'confirm-password-input'}
+                                    type='password'
+                                    onChange={handleChange}
+                                    name='confirmPassword'
+                                    value={confirmPassword}
+                                />
+                                {(confirmPassword.length > 0) && 
+                                    <FontAwesomeIcon icon={password === confirmPassword? faSquareCheck : faCircleXmark} style={{ display: 'inline-flex', fontSize: '30px', color: password === confirmPassword ? 'green' : 'red' }} />}
+                            </>
+                        )}
                     {!(signUpMode) && (
-                        <>
+                        <div>
                             <label htmlFor='button' style={{display: 'inline', fontSize: '14px'}}>No account?</label>
                             <p className='switch-sign-method' style={{display: 'inline', marginLeft:'5px', textDecoration: 'underline', fontSize: '14px'}} buttonType={ signUpButtonType } onClick={ (event) => handleButtonClick(event, 'switchToSignUpMode') }>Sign Up instead</p>
                             <div className="all-buttons-container">
@@ -208,18 +244,17 @@ const SignInUp = () => {
                                 <button onClick={ logGoogleUser } className='button-container google-sign-in'>Sign In With Google</button>
                             </div>
                             
-                        </>
+                        </div>
                     )}
                     {signUpMode && (
-                        <>
+                        <div>
                             <label htmlFor='button' style={{display: 'inline', fontSize: '14px'}} >Have an account?</label>
                             <p className='switch-sign-method' style={{display: 'inline', marginLeft:'5px', textDecoration: 'underline', fontSize: '14px'}} buttonType={ signUpButtonType } onClick={ (event) => handleButtonClick(event, 'switchToSignInMode') }>Sign In instead</p>
                             <div className="all-buttons-container">
                                 <button className='button-container' buttonType={ signUpButtonType } type='submit' onClick={ (event) => handleButtonClick(event, 'signUp') }>Sign Up</button>
                                 <button onClick={ logGoogleUser } className='button-container google-sign-in'>Sign In With Google</button>
                             </div>
-                            
-                        </>
+                        </div>
                     )}
                     </form>
             </div>
