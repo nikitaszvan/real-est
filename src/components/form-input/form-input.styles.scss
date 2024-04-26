@@ -10,15 +10,15 @@ $main-color: black;
 .group {
   position: relative;
   margin: 45px 0;
+  width: 40%;
 
   .form-input {
     background: none;
-    background-color: white;
     color: $sub-color;
     font-size: 18px;
     padding: 10px 10px 10px 5px;
     display: block;
-    width: 80%;
+    width: 100%;
     border: none;
     border-radius: 0;
     border-bottom: 1px solid $sub-color;
@@ -60,3 +60,13 @@ $main-color: black;
 .noDoubleSpace.form-input, .noSpaceInput.form-input {
   margin-bottom: 5px;
 }
+
+.confirm-password-input {
+  margin-bottom: 0px;
+  > .noSpaceInput {
+    position: relative;
+    bottom: 25px;
+  }
+}
+
+

@@ -11,7 +11,7 @@ import { BrowserRouter as Router, Routes, Route, useNavigate, Navigate, Link, Re
 import FormInput from '../form-input/form-input.component';
 import { UserContext } from '../../contexts/user.context';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark, faSquareCheck } from '@fortawesome/free-solid-svg-icons';
+import { faSquareXmark, faSquareCheck } from '@fortawesome/free-solid-svg-icons';
 
 const defaultFormFields = {
     displayName: '',
@@ -196,6 +196,7 @@ const SignInUp = () => {
                         onBlur={() => {handleInputBlur('fullName')}}
                         name='displayName'
                         value={ displayName }
+                        signUpMode = { signUpMode }
                     />)}
 
                     {((signUpMode) && (!hasAtLeastTwoWords(displayName) && (isFullNameInputSelected)) || (!hasAtLeastTwoWords(displayName) && displayName.length > 0)) &&
@@ -207,6 +208,7 @@ const SignInUp = () => {
                         onChange={ handleChange }
                         name='email'
                         value={ email }
+                        signUpMode = { signUpMode }
                     />
                     
                     <FormInput
@@ -218,6 +220,7 @@ const SignInUp = () => {
                         onBlur={() => {handleInputBlur('password')}}
                         name='password'
                         value={ password }
+                        signUpMode = { signUpMode }
                     />
                     {signUpMode && ((password.length < 6 && isPasswordInputSelected) || (password.length > 0 && password.length < 6)) &&
                     <p style={{color: 'red'}}>Password must be at least 6 characters</p>}
@@ -227,12 +230,13 @@ const SignInUp = () => {
                                     label='Confirm Password'
                                     classInput={'confirm-password-input'}
                                     type='password'
-                                    onChange={handleChange}
+                                    onChange={ handleChange }
                                     name='confirmPassword'
-                                    value={confirmPassword}
+                                    value={ confirmPassword }
+                                    signUpMode = { signUpMode }
                                 />
                                 {(confirmPassword.length > 0) && 
-                                    <FontAwesomeIcon icon={password === confirmPassword? faSquareCheck : faCircleXmark} style={{ display: 'inline-flex', fontSize: '30px', color: password === confirmPassword ? 'green' : 'red' }} />}
+                                    <FontAwesomeIcon className='verification-icon' icon={password === confirmPassword? faSquareCheck : faSquareXmark} style={{ display: 'inline-block', fontSize: '30px', color: password === confirmPassword ? 'green' : 'red' }} />}
                             </>
                         )}
                     {!(signUpMode) && (

@@ -57,7 +57,7 @@ const NavBar = () => {
      const signOutHandler = async () => {
         await signOutUser();
         setCurrentUser(null);
-        navigate('/sign-in');
+        navigate('/auth');
      }
 
   return (

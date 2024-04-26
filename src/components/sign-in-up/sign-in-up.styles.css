@@ -5,13 +5,22 @@
   -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
   height: auto;
-  width: 94%;
+  width: 93.2%;
   display: flex;
+}
+
+.email-password-section {
+  width: 94%;
 }
 
 .switch-sign-method:hover {
   text-decoration: underline;
   cursor: pointer;
+}
+
+.verification-icon {
+  margin-left: 20px;
+  padding-bottom: 10px;
 }
 
 .all-buttons-container {

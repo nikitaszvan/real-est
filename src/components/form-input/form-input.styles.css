@@ -1,15 +1,15 @@
 .group {
   position: relative;
   margin: 45px 0;
+  width: 40%;
 }
 .group .form-input {
   background: none;
-  background-color: white;
   color: grey;
   font-size: 18px;
   padding: 10px 10px 10px 5px;
   display: block;
-  width: 80%;
+  width: 100%;
   border: none;
   border-radius: 0;
   border-bottom: 1px solid grey;
@@ -48,4 +48,12 @@
 
 .noDoubleSpace.form-input, .noSpaceInput.form-input {
   margin-bottom: 5px;
+}
+
+.confirm-password-input {
+  margin-bottom: 0px;
+}
+.confirm-password-input > .noSpaceInput {
+  position: relative;
+  bottom: 25px;
 }
