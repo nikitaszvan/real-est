@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './sign-in-up.styles.css';
 import { 
     signInWithGooglePopup, 
@@ -9,7 +9,6 @@ import {
  } from '../../utils/firebase/firebase.utils';
 import { BrowserRouter as Router, Routes, Route, useNavigate, Navigate, Link, Redirect } from 'react-router-dom';
 import FormInput from '../form-input/form-input.component';
-import { UserContext } from '../../contexts/user.context';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSquareXmark, faSquareCheck } from '@fortawesome/free-solid-svg-icons';
 
@@ -23,7 +22,6 @@ const defaultFormFields = {
 const SignInUp = () => {
     const [ formFields, setFormFields ] = useState(defaultFormFields);
     const { displayName, email, password, confirmPassword } = formFields;
-    const { setCurrentUser } = useContext(UserContext);
     const [signInButtonType, setSignInButtonType] = useState('submit');
     const [signUpButtonType, setSignUpButtonType] = useState('button');
     const [signUpMode, setSignUpMode ] = useState(false);
@@ -50,7 +48,7 @@ const SignInUp = () => {
 
     const navigate = useNavigate();
     const clearFormFields = () => {
-    setFormFields(defaultFormFields);
+        setFormFields(defaultFormFields);
     }
 
     const successfulSignUp = () => {
@@ -67,9 +65,7 @@ const SignInUp = () => {
         if (password !== confirmPassword) {
             alert('passwords do not match');
             return;
-        }
-
-        if (!hasAtLeastTwoWords(displayName)) {
+        } else if (!hasAtLeastTwoWords(displayName)) {
             alert('full name must have at least two words');
             return;
         }
@@ -84,9 +80,8 @@ const SignInUp = () => {
                 displayName.trim().split(/ +/).join(' '),
             );
 
-            console.log('create', user);
-            await createUserDocumentFromAuth(user, { displayName: displayName.trim().split(/ +/).join(' ') });
-            successfulSignUp();
+            await createUserDocumentFromAuth(user);
+            handleSignIn();
         }
         catch (error) {
             switch (error.code) {
@@ -104,10 +99,8 @@ const SignInUp = () => {
 
     const handleSignIn = async () => {
         try {
-            const { user } = await signInAuthUserWithEmailAndPassword(email, password);
-            console.log('sign in', user);
+            await signInAuthUserWithEmailAndPassword(email, password);
             clearFormFields();
-            setCurrentUser(user);
             navigate('/');
         } catch (error) {
             console.log('sign in failed');
@@ -121,7 +114,7 @@ const SignInUp = () => {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        if (name =='displayName' && (value.length === 1 && value.trim() === '')) {
+        if (name === 'displayName' && (value.length === 1 && value.trim() === '')) {
             setFormFields({...formFields, [name]: ''});
         }
         else {
@@ -147,10 +140,8 @@ const SignInUp = () => {
 
     const logGoogleUser = async () => {
         try {
-        const { user } = await signInWithGooglePopup();
-        setCurrentUser(user);
-        navigate('/');
-        const userDocRef = await createUserDocumentFromAuth(user);
+            await signInWithGooglePopup();
+            navigate('/');
         }
         catch (error) {
             switch (error.code) {

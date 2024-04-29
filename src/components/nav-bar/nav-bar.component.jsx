@@ -25,7 +25,7 @@ import {
 
 const NavBar = () => {
 
-    const { currentUser, setCurrentUser } = useContext(UserContext);
+    const { currentUser } = useContext(UserContext);
 
     const webpages = [
         {
@@ -53,12 +53,11 @@ const NavBar = () => {
 
      const navigate = useNavigate();
 
-
-     const signOutHandler = async () => {
-        await signOutUser();
-        setCurrentUser(null);
+    const signOutHandler = () => {
+        signOutUser();
         navigate('/auth');
-     }
+    }
+
 
   return (
     <div className="nav-bar-container mb-3">
@@ -90,7 +89,7 @@ const NavBar = () => {
             <FontAwesomeIcon icon={ faRocketchat } />
             <div className="user-role-container">
                 <h3 className="user-fullname">{dummyUser.fullName}</h3>
-                {currentUser ? <p className="user-role">{dummyUser.role}</p> : <Link to='/sign-in'><p className="user-role">{dummyUser.role}</p></Link>}
+                {currentUser ? <p className="user-role">{dummyUser.role}</p> : <Link to='/auth'><p className="user-role">{dummyUser.role}</p></Link>}
             </div>
             {currentUser ? 
             <Menu>
