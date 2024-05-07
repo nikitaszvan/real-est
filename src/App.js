@@ -9,9 +9,8 @@ import { signInWithGooglePopup } from './utils/firebase/firebase.utils';
 import { BrowserRouter as Router, Routes, Route, Navigate, Link, Redirect } from 'react-router-dom';
 
 function App() {
-  console.log('render');
-  return (
 
+  return (
 <Router>
   <NavBar />
   <Routes>

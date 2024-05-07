@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import './sign-in-up.styles.css';
 import { 
     signInWithGooglePopup, 
@@ -51,11 +51,6 @@ const SignInUp = () => {
         setFormFields(defaultFormFields);
     }
 
-    const successfulSignUp = () => {
-        clearFormFields();
-        handleButtonClick(null, 'switchToSignInMode');
-    }
-
     function hasAtLeastTwoWords(input) {
         const pattern = /^\s*\w+(\s+\w+)+\s*$/;
         return pattern.test(input);
@@ -99,7 +94,7 @@ const SignInUp = () => {
 
     const handleSignIn = async () => {
         try {
-            await signInAuthUserWithEmailAndPassword(email, password);
+            const test = await signInAuthUserWithEmailAndPassword(email, password);
             clearFormFields();
             navigate('/');
         } catch (error) {

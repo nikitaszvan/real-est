@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import { UserProvider } from './contexts/user.context';
+import { DataProvider } from './contexts/data.context';
 import reportWebVitals from './reportWebVitals';
 
 
@@ -10,7 +11,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <UserProvider>
-      <App />
+      <DataProvider>
+        <App />
+      </DataProvider>
     </UserProvider>
   </React.StrictMode>
 );

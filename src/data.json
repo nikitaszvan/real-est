@@ -1,0 +1,27 @@
+{
+    "company": "Tech Innovations Inc.",
+    "employees": [
+      {
+        "id": 1,
+        "name": "John Doe",
+        "position": "Software Engineer",
+        "department": "Engineering",
+        "salary": 90000
+      },
+      {
+        "id": 2,
+        "name": "Jane Smith",
+        "position": "Product Manager",
+        "department": "Product Management",
+        "salary": 110000
+      },
+      {
+        "id": 3,
+        "name": "Alice Johnson",
+        "position": "Data Scientist",
+        "department": "Data Science",
+        "salary": 95000
+      }
+    ]
+}
+

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useProvider } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './nav-bar.styles.css'
 import MinimizedSearchField from './minimized-search-field/minimized-search-field.component';
@@ -57,7 +57,6 @@ const NavBar = () => {
         signOutUser();
         navigate('/auth');
     }
-
 
   return (
     <div className="nav-bar-container mb-3">
