@@ -5,16 +5,18 @@ import App from './App';
 import { UserProvider } from './contexts/user.context';
 import { DataProvider } from './contexts/data.context';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+import { store } from './store/store';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <UserProvider>
+    <Provider store={ store }>
       <DataProvider>
         <App />
       </DataProvider>
-    </UserProvider>
+    </Provider>
   </React.StrictMode>
 );
 

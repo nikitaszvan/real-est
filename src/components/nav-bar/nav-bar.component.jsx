@@ -1,6 +1,7 @@
 import React, { useContext, useProvider } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './nav-bar.styles.css'
+import { useSelector } from 'react-redux';
+import './nav-bar.styles.css';
 import MinimizedSearchField from './minimized-search-field/minimized-search-field.component';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faBell, faBars } from '@fortawesome/free-solid-svg-icons';
@@ -24,8 +25,8 @@ import {
   import { signOutUser } from '../../utils/firebase/firebase.utils';
 
 const NavBar = () => {
-
-    const { currentUser } = useContext(UserContext);
+    const currentUser = useSelector((state) => state.user.currentUser);
+    // const { currentUser } = useContext(UserContext);
 
     const webpages = [
         {

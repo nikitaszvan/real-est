@@ -3,13 +3,16 @@ import './box-1.styles.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouseTsunami } from '@fortawesome/free-solid-svg-icons';
 import { UserContext } from '../../../../contexts/user.context';
+import { useSelector } from 'react-redux';
 
 const Box1 = () => {
-const { currentUser } = useContext(UserContext);
-const dummyUser = {
-  fullName: currentUser ? currentUser.displayName.split(' ')[0] : 'guest',
-};
+// const { currentUser } = useContext(UserContext);
 
+    const currentUser = useSelector((state) => state.user.currentUser);
+
+    const dummyUser = {
+      fullName: currentUser ? currentUser.displayName.split(' ')[0] : 'guest',
+    };
   return (
     <div className="box-1 dashboard-component col-xxl-4 col-xl-5 col-lg-11 col-md-11 col-sm-11 col-xs-11">
       <div>
